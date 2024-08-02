@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Combo Square</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets\img\favicon.jpg" rel="icon">
+  <link href="assets\img\apple-touch-icon.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  var form = event.target;
+  var formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('success-message').style.display = 'block';
+      form.reset(); // Optional: reset the form after successful submission
+    } else {
+      alert('There was an error with your submission.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was an error with your submission.');
+  });
+});
+
+  </script>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Combo Square</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        <!----<li><a href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>-->
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h1>Grow your business with Combo Square</h1>
+            <p>We are team of talented designers making Designs for your Business</p>
+            <div class="d-flex">
+              <a href="#about" class="btn-get-started">Get Started</a>
+              <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"></a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img">
+            <img src="assets/img/hero-img.jpg" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/1.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/2.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/3.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/4.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/5.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/6.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/7.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/8.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/9.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/10.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/11.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/12.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>We are a leading design agency where creativity meets innovation </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+            <h3>Embodies the essence of our philosophy</h3>
+            <p>
+              our dedication to providing exceptional value and innovative solutions to our clients
+            </p>
+            <a href="#" class="about-btn align-self-center align-self-xl-start"><span>About us</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+
+          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-briefcase"></i>
+                <h4><a href="" class="stretched-link">Creative Excellence</a></h4>
+                <p>Our designs are crafted with a keen eye for detail and a passion for creativity, ensuring that your brand stands out in the market</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-gem"></i>
+                <h4><a href="" class="stretched-link">Innovative Solutions</a></h4>
+                <p>We leverage the latest technologies and design trends to provide cutting-edge solutions that drive engagement and growth</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-broadcast"></i>
+                <h4><a href="" class="stretched-link">Client-Centric Service</a></h4>
+                <p>Your satisfaction is our priority. We collaborate with you at every stage to ensure that your vision is realized to its fullest potential</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-easel"></i>
+                <h4><a href="" class="stretched-link">Strategic Planning</a></h4>
+                <p>We combine creativity with strategic thinking to develop solutions that are not only visually appealing but also effective in achieving your business goals</p>
+              </div><!-- Icon-Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 align-items-center">
+
+          <div class="col-lg-5">
+            <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="row gy-4">
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-emoji-smile flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Happy Clients</strong></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Projects</strong></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-headset flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Hours Of Support</strong></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-people flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Hard Workers</strong></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Combo Square offers a comprehensive range of services including content creation, reels, advertisement, motion designing, logo designing, packaging designing, branding videos, web designing, and UI/UX designing</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <i class="bi bi-activity"></i>
+              <h4><a href="" class="stretched-link">Social Media Optimization</a></h4>
+              <p>Maximize your online presence and engage with your audience through our Social Media Optimization (SMO) services.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <i class="bi bi-bounding-box-circles"></i>
+              <h4><a href="" class="stretched-link">Reels Editing and Creation</a></h4>
+              <p>Engage your audience with dynamic and captivating reels</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <i class="bi bi-calendar4-week"></i>
+              <h4><a href="" class="stretched-link">Web Designing and Development</a></h4>
+              <p>We provide end-to-end website designing and development services that combine aesthetics with functionality</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <i class="bi bi-broadcast"></i>
+              <h4><a href="" class="stretched-link">Product & Packaging Design</a></h4>
+              <p>Make a lasting impression with our product and packaging design services</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <i class="bi bi-broadcast"></i>
+              <h4><a href="" class="stretched-link">Branding</a></h4>
+              <p>Elevate your brand identity with our bespoke branding services</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <i class="bi bi-broadcast"></i>
+              <h4><a href="" class="stretched-link">Advertisement Creatives</a></h4>
+              <p>Stand out in the crowded marketplace with our tailored ad creatives</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <i class="bi bi-broadcast"></i>
+              <h4><a href="" class="stretched-link">Landing Page Services</a></h4>
+              <p>Capture leads and drive conversions with our optimized landing page services</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <i class="bi bi-broadcast"></i>
+              <h4><a href="" class="stretched-link">Content Creation</a></h4>
+              <p>Our content creation services are designed to captivate and engage your audience</p>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Alt Services Section -->
+    <section id="alt-services" class="alt-services section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="img">
+                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details">
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Designing</h3>
+                </a>
+                <p>"Transform your ideas into stunning visuals with our expert designing services. We create designs that captivate and inspire"</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="img">
+                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details">
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Development</h3>
+                </a>
+                <p>"Bring your vision to life with our comprehensive development solutions. We build robust and user-friendly platforms tailored to your needs"</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details">
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Editing</h3>
+                </a>
+                <p>"Enhance your content with our professional editing services. We ensure every detail is polished to perfection"</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="img">
+                <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details">
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Creation</h3>
+                </a>
+                <p>"Unleash your creativity with our innovative creation services. We craft unique and engaging content that stands out"</p>
+                <a href="service-details.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Alt Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        <p>Our creativity and dedication combine to deliver exceptional results, ensuring your brand's success and standing out with consistent quality and innovation</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item">
+              <i class="bi bi-eye" style="color: #ffbb2c;"></i>
+              <h3><a href="" class="stretched-link">Innovative Design Solutions</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item">
+              <i class="bi bi-infinity" style="color: #5578ff;"></i>
+              <h3><a href="" class="stretched-link">Comprehensive Service Range</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item">
+              <i class="bi bi-mortarboard" style="color: #e80368;"></i>
+              <h3><a href="" class="stretched-link">Expert Team</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-item">
+              <i class="bi bi-nut" style="color: #e361ff;"></i>
+              <h3><a href="" class="stretched-link">Client-Centric Approach</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="features-item">
+              <i class="bi bi-shuffle" style="color: #47aeff;"></i>
+              <h3><a href="" class="stretched-link">Latest Technology Integration</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="features-item">
+              <i class="bi bi-star" style="color: #ffa76e;"></i>
+              <h3><a href="" class="stretched-link">Brand Elevation</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="features-item">
+              <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
+              <h3><a href="" class="stretched-link">High-Quality Content</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="features-item">
+              <i class="bi bi-camera-video" style="color: #4233ff;"></i>
+              <h3><a href="" class="stretched-link">Affordable Pricing</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+            <div class="features-item">
+              <i class="bi bi-command" style="color: #b2904f;"></i>
+              <h3><a href="" class="stretched-link">Timely Delivery</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+            <div class="features-item">
+              <i class="bi bi-dribbble" style="color: #b20969;"></i>
+              <h3><a href="" class="stretched-link">Sustainability Focus</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
+            <div class="features-item">
+              <i class="bi bi-activity" style="color: #ff5828;"></i>
+              <h3><a href="" class="stretched-link">Strong Community Engagement</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
+            <div class="features-item">
+              <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
+              <h3><a href="" class="stretched-link">Proven Track Record</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Look out our works</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 1</h4>
+                  <p></p>
+                  <a href="assets/img/portfolio/1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 1</h4>
+                  <p></p>
+                  <a href="assets/img/portfolio/2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/4.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/4.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/5.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/5.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/6.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/6.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/7.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/7.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/8.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/8.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/9.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/9.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/10.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/10.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/11.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/11.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/12.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/12.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>Some of our Clients Testimonals</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>Inkrobe</h3>
+                  <h4>Clothing Brand</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>We had the pleasure of collaborating with Ahmad on our website development project, and we couldn't be happier with the results </p><span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Mohammed Sakeel</h3>
+                  <h4>CEO & FOUNDER of TAS Innovation</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Ahamad's creativity and attention to detail are truly remarkable. His designs have given our brand a fresh and dynamic identity, attracting a whole new audience. Working with him was a pleasure, and the results exceeded our expectations</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-3.png" class="testimonial-img" alt="">
+                  <h3>Relief Forever</h3>
+                  <h4>Herbal Manufacturer</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Working with Ahamad was an absolute delight! His expertise in UI/UX design brought our project to life, and his dedication to delivering excellence is evident in every pixel. We couldn't be happier with the outcome</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <h3>Kaveri Sadaiappan</h3>
+                  <h4>Marketing Agency</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>Ahmad's talent in video editing is unparalleled. He took our raw footage and transformed it into a cinematic masterpiece that perfectly captured the essence of our message. His professionalism and commitment to perfection are commendable</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <h3>Bismi Hotel</h3>
+                  <h4>Restaurant</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span> His innovative approach and meticulous attention to detail resulted in a website that not only looks stunning but also functions seamlessly</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Pricing at our company is structured to meet your needs effectively, allowing for flexibility while ensuring consistent, high-quality services</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Social Media Optimization</h3>
+              <h4><sup>₹</sup>4999<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>15 Social Media Posters</span></li>
+                <li><i class="bi bi-check"></i> <span>3 social media platforms</span></li>
+                <li><i class="bi bi-check"></i> <span>5 Reels </span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Hashtag Research & Caption Writing</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Customizable</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3>Branding</h3>
+              <h4><sup>₹</sup>14999<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Logo Designing</span></li>
+                <li><i class="bi bi-check"></i> <span>Static Website Designing</span></li>
+                <li><i class="bi bi-check"></i> <span>SEO Optimization</span></li>
+                <li><i class="bi bi-check"></i> <span>Brand Strategy</span></li>
+                <li><i class="bi bi-check"></i> <span>Content Development</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="pricing-item">
+              <h3>Product Desiging</h3>
+              <h4><sup>₹</sup>9999<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Concept Development</span></li>
+                <li><i class="bi bi-check"></i> <span>Prototyping</span></li>
+                <li><i class="bi bi-check"></i> <span>User-Centered Design</span></li>
+                <li><i class="bi bi-check"></i> <span>Manufacturability</span></li>
+                <li><i class="bi bi-check"></i> <span>Iterative Design Process</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>FAQ</h2>
+        <p>Some of the frequently asked questions</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 d-flex">
+            <span><strong>1.</strong></span>
+            <h4>What services does Combo Square offer?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+            Combo Square offers a wide range of services including content creation, reels editing and creation, advertisement creatives, ad video creatives, logo designing, branding logos, web designing and development, UI/UX designing, portfolio services, landing page services, and product & packaging design.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5 d-flex">
+            <span><strong>2.</strong></span>
+            <h4>What is the pricing for your services?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>Our pricing varies based on the service provided. For example, content creation and reels editing range from ₹800-1k, logo designing is priced at ₹1.5k-2k, and website designing and development costs between ₹8k-10k. For a detailed pricing list, please refer to our services page or contact us directly
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5 d-flex">
+            <span><strong>3.</strong></span>
+            <h4>How long does it take to complete a project?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>The timeline for project completion depends on the scope and complexity of the project. Typically, smaller projects like logo design or ad creatives can be completed within a week, whereas larger projects like website development or comprehensive branding may take several weeks. We ensure timely delivery and keep our clients informed throughout the process
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-5 d-flex">
+            <span><strong>4.</strong></span>
+            <h4>Can you customize your services to fit our specific needs?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>Absolutely! At Combo Square, we understand that each client has unique requirements. We offer customizable solutions tailored to meet your specific needs and goals. Whether it's a bespoke branding package or a unique web design, we work closely with you to achieve the best results
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <span><strong>5.</strong></span>
+            <h4>What makes Combo Square different from other designing agencies?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>Combo Square stands out due to our innovative approach, client-centric philosophy, and commitment to using the latest technologies. Our diverse range of services, expert team, and dedication to delivering high-quality, creative solutions ensure that we consistently exceed client expectations. Our tagline, "We Elevate Your Brand by Creativity," encapsulates our mission to enhance your brand's presence and impact
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>To know more about us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Madhavalayam,Kanyakumari,TamilNadu</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 8072877622</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>combosquare2@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-7">
+            <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="500">
+              <input type="hidden" name="access_key" value="1b0f54ea-c13f-4f18-a52e-1d49ceddcd98">
+
+
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+
+
+                  <button type="submit" style="background-color: rgb(6, 178, 246); color: white; border-radius: 5px; border: none; padding: 10px 20px;">
+                    Send Message
+                  </button>
+                  
+                                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Combo Square</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Madhavalayam</p>
+            <p>TamilNadu</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 8072877622</span></p>
+            <p><strong>Email:</strong> <span>combosquare2@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://x.com/combosquare_"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61562432777570"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/combo_square_?igsh=Mjg1NXM2dTZkcHVv"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/combo-square/"><i class="bi bi-linkedin"></i></a>
+          </div>
+          
+        </div>
+        
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/combo_square_?igsh=Mjg1NXM2dTZkcHVv">Social Media Optimization</a></li>
+            <li><a href="https://www.instagram.com/combo_square_?igsh=Mjg1NXM2dTZkcHVv">Branding</a></li>
+            <li><a href="https://www.instagram.com/combo_square_?igsh=Mjg1NXM2dTZkcHVv">Product Designing</a></li>
+            <li><a href="https://www.instagram.com/combo_square_?igsh=Mjg1NXM2dTZkcHVv">Website Development</a></li>
+            <li><a href="https://www.instagram.com/combo_square_?igsh=Mjg1NXM2dTZkcHVv">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form id="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1b0f54ea-c13f-4f18-a52e-1d49ceddcd98">
+            <div class="newsletter-form">
+              <input type="email" name="email" required>
+              <input type="submit" value="Subscribe">
+            </div>
+          </form>
+          <p id="success-message" style="display:none;">Your subscription request has been sent.</p>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Combo Square</strong><span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">Combo Square</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
