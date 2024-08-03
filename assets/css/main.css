@@ -879,6 +879,10 @@ section,
   color: var(--contrast-color);
 }
 
+.about .icon-box {
+  text-align: center; /* Center-align text and icons within the icon box */
+}
+
 .about .icon-box i {
   font-size: 40px;
   color: var(--accent-color);
@@ -905,7 +909,6 @@ section,
 .about .icon-box:hover h4 a {
   color: var(--accent-color);
 }
-
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
